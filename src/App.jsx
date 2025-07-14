@@ -8,12 +8,13 @@ import axios from "axios"
 import Navbar from './components/Navbar.jsx'
 import SocialLinks from './components/SocialLinks.jsx'
 import ChatBox from './components/ChatBox.jsx'
+import profilePic from './assets/profile.jpeg'
 
 // This whole function is a react component
 // It is the main component of the application 
 function App() {
 
-  // Learn promises!
+  // Listens at a certain adress (Learn promises!)
   const fetchAPI = async () => {
     const response = await axios.get("http://localhost:3000/")
     console.log(response.data)
@@ -69,7 +70,7 @@ function ProfilePicture() {
   return (
     <div className="w-full h-full flex justify-center items-center">
       <img
-        src="/profile.jpeg"
+        src={profilePic}
         alt="Profile"
         className="w-full h-full rounded-xl object-cover shadow-md"
       />
