@@ -15,15 +15,15 @@ import profilePic from './assets/profile.jpeg'
 function App() {
 
   // Listens at a certain adress (Learn promises!)
-  const fetchAPI = async () => {
-    const response = await axios.get("https://portfolio-server-production-315f.up.railway.app")
-    console.log(response.data)
-  }
+  // const fetchAPI = async () => {
+  //   const response = await axios.get("https://portfolio-server-production-315f.up.railway.app")
+  //   console.log(response.data)
+  // }
 
-  // Hook that runs after the App component renders, used to stay connected to an external system (backend in this case)
-  useEffect(() => {
-    fetchAPI();
-  }, []);
+  // // Hook that runs after the App component renders, used to stay connected to an external system (backend in this case)
+  // useEffect(() => {
+  //   fetchAPI();
+  // }, []);
 
   // This is the visual layout of my frontend
   return (

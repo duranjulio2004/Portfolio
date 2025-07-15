@@ -13,27 +13,27 @@ function ChatBox() {
     setMessages((prev) => [...prev, newMessage]);
 
     // Send it to backend
-        fetch("https://portfolio-server-production-315f.up.railway.app/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ newMessage: newMessage.text }),
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            setMessages((prev) => [
-            ...prev,
-            { sender: "bot", text: data.reply },
-            ]);
-        })
-        .catch((err) => {
-            console.error("Error:", err);
-            setMessages((prev) => [
-            ...prev,
-            { sender: "bot", text: "Sorry, something went wrong." },
-            ]);
-        });
+          fetch("https://portfolio-server-production-315f.up.railway.app/", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ newMessage: newMessage.text }),
+          })
+          .then((res) => res.json())
+          .then((data) => {
+              setMessages((prev) => [
+              ...prev,
+              { sender: "bot", text: data.reply },
+              ]);
+          })
+          .catch((err) => {
+              console.error("Error:", err);
+              setMessages((prev) => [
+              ...prev,
+              { sender: "bot", text: "Sorry, something went wrong." },
+              ]);
+          });
 
     setInput("");
   };
