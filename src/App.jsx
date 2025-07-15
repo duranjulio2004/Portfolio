@@ -16,7 +16,7 @@ function App() {
 
   // Listens at a certain adress (Learn promises!)
   const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:3000/")
+    const response = await axios.get("https://portfolio-server-production-315f.up.railway.app")
     console.log(response.data)
     setChat(response.data)
   }
