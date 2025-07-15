@@ -18,7 +18,6 @@ function App() {
   const fetchAPI = async () => {
     const response = await axios.get("https://portfolio-server-production-315f.up.railway.app")
     console.log(response.data)
-    setChat(response.data)
   }
 
   // Hook that runs after the App component renders, used to stay connected to an external system (backend in this case)

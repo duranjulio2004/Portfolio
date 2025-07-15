@@ -13,7 +13,7 @@ function ChatBox() {
     setMessages((prev) => [...prev, newMessage]);
 
     // Send it to backend
-        fetch("http://localhost:3000/", {
+        fetch("https://portfolio-server-production-315f.up.railway.app/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
