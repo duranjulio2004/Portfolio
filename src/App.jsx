@@ -43,25 +43,26 @@ function App() {
 // Smaller/simpler components that don't need their own files
 function About() {
   return (
-    <section className="w-full h-[300px] flex justify-start items-stretch">
-      <div className="bg-white/5 backdrop-blur-md border border-white/10 w-1/2 p-8 text-left rounded-xl shadow-lgtext-white bg-gradient-to-br from-[#0f1117] to-[#1a1d24]">
-        <h2 className="text-4xl font-bold mb-1 font-mono">Julio Duran</h2>
-        <p className="text-gray-400 text-lg">
-          21-year-old software developer & CS student @PUC
-        </p>
-        <p className="text-gray-400 text-lg flex items-center gap-2">
-          <span className="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
-          Open to work
-        </p>
-        <br></br>
-        <p>&#x1F4CD; Santiago, Chile</p>
-        <SocialLinks/>
-      </div>
+    <section className="w-full flex flex-col md:flex-row items-center justify-between gap-6 px-4 md:px-16 py-8">
+  {/* Left Box */}
+  <div className="bg-white/5 backdrop-blur-md border border-white/10 w-full md:w-1/2 p-6 md:p-8 text-left rounded-xl shadow-lg text-white bg-gradient-to-br from-[#0f1117] to-[#1a1d24]">
+    <h2 className="text-3xl md:text-4xl font-bold mb-2 font-mono">Julio Duran</h2>
+    <p className="text-gray-400 text-lg">
+      21-year-old software developer & CS student @PUC
+    </p>
+    <p className="text-gray-400 text-lg flex items-center gap-2 mt-1">
+      <span className="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+      Open to work
+    </p>
+    <p className="mt-2">&#x1F4CD; Santiago, Chile</p>
+    <SocialLinks />
+  </div>
 
-      <div className="ml-auto py-5 font-inter text-center rounded-lg shadow-lg text-white">
-        <ProfilePicture />
-      </div>
-    </section>
+  {/* Right Box */}
+  <div className="w-full md:w-[250px] h-auto rounded-lg shadow-lg overflow-hidden">
+    <ProfilePicture />
+  </div>
+</section>
   )
 }
 
