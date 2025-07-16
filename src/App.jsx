@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Fab, Webchat } from '@botpress/webchat'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -13,6 +14,11 @@ import profilePic from './assets/profile.jpeg'
 // This whole function is a react component
 // It is the main component of the application 
 function App() {
+
+  const [isWebchatOpen, setIsWebchatOpen] = useState(false)
+  const toggleWebchat = () => {
+    setIsWebchatOpen((prevState) => !prevState)
+  }
 
   // Listens at a certain adress (Learn promises!)
   // const fetchAPI = async () => {
@@ -34,6 +40,28 @@ function App() {
     <div className="h-40 bg-gray-950 text-white flex justify-center py-6">
       <ChatBox />
     </div>
+
+     <Webchat
+        clientId="db51b016-6153-4a9f-88ca-d5d9a166a616" // Your client ID here
+        style={{
+          width: '400px',
+          height: '600px',
+          display: isWebchatOpen ? 'flex' : 'none',
+          position: 'fixed',
+          bottom: '90px',
+          right: '20px',
+        }}
+      />
+      <Fab
+        onClick={() => toggleWebchat()}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          width: '64px',
+          height: '64px'
+        }}
+      />
 
     </>
   )
